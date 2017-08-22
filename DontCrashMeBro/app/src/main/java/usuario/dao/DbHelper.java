@@ -9,6 +9,7 @@ public class DbHelper extends SQLiteOpenHelper {
     protected static final String NOME_DB = "banco.db";
     protected static final int VERSAO = 1;
     private SqlScripts scripts = new SqlScripts();
+    private Context context;
 
     // TABELA DOS USUARIOS
     protected static final String TABELA_USUARIO = "tabela_usuarios";
@@ -18,19 +19,19 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // TABELA DAS PESSOAS
     protected static final String TABELA_PESSOA = "tabela_pessoas";
-    protected static final String ID_PESSOA ="_id_pessoa";
     protected static final String NOME = "nome";
     protected static final String PESSOA_USER = "pessoa_usuario";
     protected static final String ENDERECO_CASA = "endereco_casa";
-    protected static final String MODELO_DRONE = "endereco_trabalho";
+    protected static final String MODELO_DRONE = "modelo_drone";
 
     public DbHelper(Context context){
         super(context, NOME_DB, null, VERSAO);
+        this.context = context;
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(scripts.createTabelaUsuario());
-        db.execSQL(scripts.createTabelaPessoa());
+        //db.execSQL(scripts.createTabelaPessoa());
     }
 
     @Override

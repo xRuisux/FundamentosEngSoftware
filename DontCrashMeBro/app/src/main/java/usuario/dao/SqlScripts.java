@@ -16,7 +16,7 @@ public class SqlScripts {
 
         StringBuilder pessoaBuilder = new StringBuilder();
         pessoaBuilder.append("CREATE TABLE "+ TABELA_PESSOA +" ( ");
-        pessoaBuilder.append(ID_PESSOA +" integer primary key autoincrement, ");
+        pessoaBuilder.append(ID_USUARIO +" integer primary key autoincrement, ");
         pessoaBuilder.append(NOME +" text not null, ");
         pessoaBuilder.append(PESSOA_USER +" text not null unique, ");
         pessoaBuilder.append(ENDERECO_CASA +" text, ");

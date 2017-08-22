@@ -26,5 +26,13 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string-array name="modelo_drone">
+        <item>Modelo de Drones</item>
+        <item>AR Drone 2.0</item>
+        <item>3DR Solo</item>
+        <item>DJI Phantom 3</item>
+    </string-array>
+
     <string name="action_settings">LogOut</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

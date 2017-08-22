@@ -35,12 +35,12 @@ public class UsuarioDao {
         valor = new ContentValues();
         valor.put(DbHelper.NOME, pessoa.getNome());
         valor.put(DbHelper.PESSOA_USER, pessoa.getUsuario().getLogin());
-        valor.put(DbHelper.ENDERECO_CASA, pessoa.getEnderecoCasa());
-        valor.put(DbHelper.MODELO_DRONE, pessoa.getModeloDrone());
+        //valor.put(DbHelper.ENDERECO_CASA, pessoa.getEnderecoCasa());
+        //valor.put(DbHelper.MODELO_DRONE, pessoa.getModeloDrone());
         //valor.put(DbHelper.PLANO_SAUDE, pessoa.getPlanoSaude());
         //valor.put(DbHelper.NASCIMENTO, validacao.mudarData(pessoa.getNascimento()) );
 
-        db.insert(DbHelper.TABELA_PESSOA,null, valor);
+        db.insert(DbHelper.TABELA_PESSOA, null, valor);
         db.close();
     }
     public void atualizarRegistro(Pessoa pessoa){
@@ -49,7 +49,6 @@ public class UsuarioDao {
         validacao =  new UsuarioValidacao(this.context);
 
         db = dataBaseHelper.getWritableDatabase();
-        where = DbHelper.ID_PESSOA + "=" + pessoa.getId();
         valor = new ContentValues();
         valor.put(DbHelper.NOME, pessoa.getNome());
         valor.put(DbHelper.ENDERECO_CASA, pessoa.getEnderecoCasa());
@@ -57,7 +56,7 @@ public class UsuarioDao {
         //valor.put(DbHelper.PLANO_SAUDE, pessoa.getPlanoSaude());
         //valor.put(DbHelper.NASCIMENTO, validacao.mudarData(pessoa.getNascimento()) );
 
-        db.update(DbHelper.TABELA_PESSOA, valor, where, null);
+        db.update(DbHelper.TABELA_PESSOA, valor, null, null);
         db.close();
     }
     public Usuario buscarUsuario(String user, String password) {
@@ -124,8 +123,8 @@ public class UsuarioDao {
         Pessoa pessoa = new Pessoa();
         pessoa.setId(cursor.getShort(0));
         pessoa.setNome(cursor.getString(1));
-        //pessoa.setEnderecoCasa(cursor.getString(3));
-        //pessoa.setEnderecoTrabalho(cursor.getString(4));
+        pessoa.setEnderecoCasa(cursor.getString(3));
+        pessoa.setModeloDrone(cursor.getString(4));
         //pessoa.setPlanoSaude(cursor.getString(5));
         return pessoa;
     }

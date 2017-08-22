@@ -3,10 +3,6 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_perfil"
-            android:icon="@drawable/ic_menu_perfil"
-            android:title="Perfil" />
-        <item
             android:id="@+id/nav_leis"
             android:icon="@drawable/ic_menu_leis"
             android:title="Leis" />
@@ -14,10 +10,7 @@
             android:id="@+id/nav_mapa"
             android:icon="@drawable/ic_menu_mapa"
             android:title="Mapa" />
-        <item
-            android:id="@+id/nav_configs"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Configurações" />
+
     </group>
 
 </menu>
