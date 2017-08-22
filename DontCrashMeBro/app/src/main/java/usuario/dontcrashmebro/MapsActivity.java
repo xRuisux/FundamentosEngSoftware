@@ -176,7 +176,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         MarkerOptions options = new MarkerOptions();
         options.position(latLng).title("Recomendação")
-                .snippet("PRONTO PARA SE AVENTURAR"+"\n"+"Condição climática: Sol"+"\n"+"Velocidade dos ventos: 16 km/h");
+                .snippet("Cuidado, possibilidade de chuva"+"\n"+"Condição climática: Parcialmente nublado"+"\n"+"Velocidade dos ventos: 19 km/h");
 
         this.marker = this.mMap.addMarker(options);
     }
